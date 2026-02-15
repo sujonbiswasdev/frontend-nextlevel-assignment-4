@@ -53,7 +53,26 @@ export function AppSidebar({ user, ...props }: { user: User & React.ComponentPro
   }
   return (
     <Sidebar  collapsible="offcanvas" {...props}>
-     
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              asChild
+              className="data-[slot=sidebar-menu-button]:!p-1.5"
+            >
+              <a href="#">
+                <IconInnerShadowTop className="!size-5" />
+                <span className="text-base font-semibold">Foodhub</span>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
+      <SidebarContent className="mt-5">
+        <DashboardNavmenu navitem={routes}/>
+      </SidebarContent>
+      <SidebarFooter>
+      </SidebarFooter>
     </Sidebar>
   )
 }
